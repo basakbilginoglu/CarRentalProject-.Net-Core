@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.Dtos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,9 @@ namespace DataAccess.Concrete
         {
             _cars = new List<Car>
             {
-                new Car{Id=1,BrandId=2,ColorId=2,DailyPrice=250000,ModelYear=2017,Description="Benzinli"},
-                new Car{Id=2,BrandId=2,ColorId=3,DailyPrice=300000,ModelYear=2017,Description="Elektrikli"},
-                new Car{Id=3,BrandId=1,ColorId=2,DailyPrice=350000,ModelYear=2017,Description="Hibrit"},
+                new Car{CarId=1,BrandId=2,ColorId=2,DailyPrice=250000,ModelYear=2017,Description="Benzinli"},
+                new Car{CarId=2,BrandId=2,ColorId=3,DailyPrice=300000,ModelYear=2017,Description="Elektrikli"},
+                new Car{CarId=3,BrandId=1,ColorId=2,DailyPrice=350000,ModelYear=2017,Description="Hibrit"},
             };
         }
 
@@ -30,7 +31,7 @@ namespace DataAccess.Concrete
 
         public List<Car> GetById(int Id)
         {
-            return _cars.Where(c => c.Id == Id).ToList();
+            return _cars.Where(c => c.CarId == Id).ToList();
         }
 
         public void Add(Car car)
@@ -40,7 +41,7 @@ namespace DataAccess.Concrete
 
         public void Update(Car car)
         {
-            Car carToUpdate = _cars.SingleOrDefault(c => c.Id == car.Id); _cars.SingleOrDefault(c => c.Id == car.Id);
+            Car carToUpdate = _cars.SingleOrDefault(c => c.CarId == car.CarId); _cars.SingleOrDefault(c => c.CarId == car.CarId);
 
             carToUpdate.ColorId = car.ColorId;
             carToUpdate.BrandId = car.BrandId;
@@ -50,7 +51,7 @@ namespace DataAccess.Concrete
 
         public void Delete(Car car)
         {
-            Car carToDelete =carToDelete=_cars.SingleOrDefault(c => c.Id == car.Id);
+            Car carToDelete =carToDelete=_cars.SingleOrDefault(c => c.CarId == car.CarId);
            _cars.Remove(carToDelete);
         }
 
@@ -60,6 +61,11 @@ namespace DataAccess.Concrete
         }
 
         public Car Get(Expression<Func<Car, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CarDetailDto> GetCarDetails()
         {
             throw new NotImplementedException();
         }
