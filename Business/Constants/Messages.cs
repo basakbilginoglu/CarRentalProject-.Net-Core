@@ -13,5 +13,14 @@ namespace Business.Constants
         public static string CarByBrand = "Markaya Göre Gösterildi";
         public static string CarByColor = "Renge Göre Gösterildi";
         public static string CarDetails = "Araba Detayları";
+        public static string RentalAdded = "Kiralama işlemi Eklendi";
+        public static string RentalDeleted = "Kiralama işlemi silindi";
+        public static string RentalUpdated = "Kiralama işlemi Güncellendi";
+        public static string RentalListed = "Kiralama işlemleri Lİstelendi";
+        public static string CustomerAdded = "Yeni Müşteri eklendi";
+        public static string CustomerDeleted = "Müşteri silindi";
+        public static string CustomerUpdated= "Müşteri bilgileri güncellendi";
+        public static string CustomerListed = "Müşteri bilgileri listelendi";
+        public static string CarNotFounded = "Araba bulunamadı";
     }
 }
